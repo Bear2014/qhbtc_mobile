@@ -1,0 +1,121 @@
+<include file="Public:header" />
+<div id="main-content">
+	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+		<button class="close fixed" style="margin-top: 4px;">&times;</button>
+		<div class="alert-content">警告内容</div>
+	</div>
+	<div id="main" class="main">
+		<div class="main-title-h">
+			<span class="h1-title">转出钱包</span>
+			<notempty name="name">
+				<span class="h2-title">>><a href="{:U('User/myzc')}">转出列表</a></span>
+			</notempty>
+		</div>
+
+		<nav role="navigation" class="navbar  navbar-default">
+				<div class="collapse navbar-collapse">
+					<form name="formSearch" id="formSearch" class="navbar-form navbar-right" method="#" name="form1" role="search">
+						<div class="form-group">
+							<div class="input-group">
+								<input id="search_name"  class="form-control" type="search" name="name" class="search-input" value="{$name}"
+									   placeholder="请输入用户名">
+									  <span class="input-group-btn">
+										<button id="search" type="button" class="btn"><span class="fui-search"></span></button>
+									  </span>
+							</div>
+						</div>
+					</form>
+
+					<select id="search_coin" name="coin" class="navbar-btn navbar-right  form-control select select-default select-sm">
+						<option value=""<empty name="coin">selected</empty> >全部
+						</option>
+
+						<volist name="C['coin_list']" id="v">
+							<option value="{$v['name']}"<eq name="coin" value="$v['name']">selected</eq>>{$v['title']}</option>
+						</volist>
+					</select>
+				</div>
+
+
+			</nav>
+
+		<div class="data-table table-striped">
+			<table class="">
+				<thead>
+					<tr>
+						<th class="row-selected row-selected"><input class="check-all" type="checkbox" /></th>
+						<th class="">ID</th>
+						<th class="">用户名</th>
+						<th class="">币种</th>
+						<th width="">转入时间</th>
+									<th width="">转出地址</th>
+									<th width="">转入数量</th>
+									<th class="">提现手续费</th>
+									<th width="">状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<notempty name="list"> <volist name="list" id="vo">
+					<tr>
+						<td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
+						<td>{$vo.id}</td>
+						<td>{$vo['usernamea']}</td>
+						<td>{$vo.coinname}</td>
+						<td>{$vo.time|addtime}</td>
+									<td>{$vo.username}</td>
+									<td>{$vo.num}</td>
+									
+									<td>{$vo.fee}</td>
+									<td><eq name="vo.status" value="1"> <font color="#23a800">成功 </font> <else /><a href="{:U('User/myzc_qr?id='.$vo['id'])}" class="ajax-get">确认转出 </a></eq></td>
+								
+						
+					</tr>
+					</volist> <else />
+					<td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+					</notempty>
+				</tbody>
+			</table>
+			<div class="page">
+				<div>{$page}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	//搜索功能
+	$(function(){
+		$('#search').click(function(){
+			var name = $('#search_name').val();
+			var coin = $('#search_coin').val();
+			var str = '';
+			if(!name){
+				layer.tips('输入内容', '#search_name', {
+					tips: [1, '#0FA6D8'] //还可配置颜色
+				});
+				return;
+			}
+			str = 'name=' + name;
+			if(coin){
+				str += '&coin=' + coin;
+			}
+
+			window.location = '?' + str;
+		});
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode===13){
+			$("#search").click();
+			return false;
+		}
+	});
+</script>
+<script type="text/javascript">
+	$(function(){
+		//主导航高亮
+		$('.user-box').addClass('current');
+		//边导航高亮
+		$('.user-myzc').addClass('current');
+	});
+</script>
+<include file="Public:footer" />

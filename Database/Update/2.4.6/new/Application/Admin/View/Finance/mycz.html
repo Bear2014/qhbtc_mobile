@@ -1,0 +1,112 @@
+<include file="Public:header"/>
+<div id="main-content">
+	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+		<button class="close fixed" style="margin-top: 4px;">&times;</button>
+		<div class="alert-content">警告内容</div>
+	</div>
+	<div id="main" class="main">
+		<div class="main-title-h">
+			<span class="h1-title">人民币充值</span>
+		</div>
+		<div class="cf">
+			<div class="fl">
+				<button class="btn ajax-post confirm btn-danger" url="{:U('Finance/myczStatus',array('type'=>'del'))}" target-form="ids">删 除</button>
+			</div>
+			<div class="search-form fr cf">
+				<div class="sleft">
+					<form name="formSearch" id="formSearch" method="get" name="form1">
+						<input type="text" name="name" class="search-input" value="{$Think.get.name}" placeholder="请输入用户名">
+						<a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
+					</form>
+					<script>
+						//搜索功能
+						$(function () {
+							$('#search').click(function () {
+								$('#formSearch').submit();
+							});
+						});
+						//回车搜索
+						$(".search-input").keyup(function (e) {
+							if (e.keyCode === 13) {
+								$("#search").click();
+								return false;
+							}
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+		<div class="data-table table-striped">
+			<table class="">
+				<thead>
+				<tr>
+					<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+					<th class="">ID</th>
+					<th class="">用户名</th>
+					<th class="">充值金额</th>
+					<th width="">到账金额</th>
+					<th width="">充值方式</th>
+					<th width="">充值订单</th>
+					<th class="">充值时间</th>
+					<th width="">状态</th>
+					<th width="">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<notempty name="list">
+					<volist name="list" id="vo">
+						<tr>
+							<td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
+							<td>{$vo.id}</td>
+							<td>{$vo['username']}
+							</td>
+							<td>{$vo.num}</td>
+							<td>{$vo.mum}</td>
+							<td>{$vo.type}</td>
+							<td>{$vo.tradeno}</td>
+							<td>{$vo.addtime|addtime}</td>
+							<td>
+								<eq name="vo.status" value="0">未付款</eq>
+								<eq name="vo.status" value="1">充值成功</eq>
+								<eq name="vo.status" value="2">人工到账</eq>
+								<eq name="vo.status" value="3">处理中</eq>
+							</td>
+							<td>
+								<eq name="vo.status" value="0">
+									<a href="{:U('Finance/myczQueren?id='.$vo['id'])}" class="ajax-get btn btn-primary btn-xs">确认到账 </a>
+								</eq>
+								<eq name="vo.status" value="3">
+									<a href="{:U('Finance/myczQueren?id='.$vo['id'])}" class="ajax-get btn btn-primary btn-xs">确认到账 </a>
+								</eq>
+							</td>
+						</tr>
+					</volist>
+					<else/>
+					<td colspan="12" class="text-center">Oh! 暂时还没有内容!</td>
+				</notempty>
+				</tbody>
+			</table>
+			<div class="page">
+				<div>{$page}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	//回车搜索
+	$(".search-input").keyup(function (e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+</script>
+<script type="text/javascript">
+	$(function () {
+		//主导航高亮
+		$('.user-box').addClass('current');
+		//边导航高亮
+		$('.user-myzc').addClass('current');
+	});
+</script>
+<include file="Public:footer"/>

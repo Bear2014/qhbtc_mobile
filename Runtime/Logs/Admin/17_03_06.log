@@ -1,0 +1,64 @@
+[ 2017-03-06T10:26:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /var/www/gcash/ThinkPHP/Library/Think/App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 5 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 9 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 186 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000460s ]
+
+[ 2017-03-06T10:27:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /var/www/gcash/ThinkPHP/Library/Think/App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 5 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 9 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 186 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+
+[ 2017-03-06T10:28:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /var/www/gcash/ThinkPHP/Library/Think/App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 5 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 9 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 186 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+
+[ 2017-03-06T10:29:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD /var/www/gcash/ThinkPHP/Library/Think/App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 5 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 6 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 7 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 8 行.
+NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' /var/www/gcash/Application/Admin/Conf/config.php 第 9 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' /var/www/gcash/ThinkPHP/Library/Think/Dispatcher.class.php 第 186 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+

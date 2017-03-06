@@ -1,0 +1,219 @@
+<div id="footer">
+    <volist name="C['footer']['a']" id="vo">
+        <a href="{$vo['url']}">{$vo['title']}</a> |
+    </volist>
+    <p style="margin-top: 5px;text-align: center;">
+        Copyright © 2016
+        <a href="/">{$C['web_name']}交易平台 </a> All Rights Reserved.
+        <a href="http://www.miibeian.gov.cn/">{$C['web_icp']}</a>{$C['web_cnzz']|htmlspecialchars_decode}
+    </p>
+
+    <p class="clear1" id="ut646" style="margin-top: 10px;text-align: center;">
+        <a href="http://www.szfw.org/" target="_blank" class="margin10">
+            <img src="__UPLOAD__/footer/footer_2.png">
+        </a>
+        <a href="http://www.miibeian.gov.cn/" target="_blank" class="margin10">
+            <img src="__UPLOAD__/footer/footer_3.png">
+        </a>
+        <a href="http://www.cyberpolice.cn/" target="_blank" class="margin10">
+            <img src="__UPLOAD__/footer/footer_4.png">
+        </a>
+    </p>
+</div><!--代码部分begin-->
+<div id="floatTools" class="rides-cs" style="height: 200px;">
+    <div class="floatL">
+        <a id="aFloatTools_Show" class="btnOpen" title="查看在线客服" style="top: 20px; display: block" href="javascript:void(0);">展开</a>
+        <a id="aFloatTools_Hide" class="btnCtn" title="关闭在线客服" style="top: 20px; display: none" href="javascript:void(0);">收缩</a>
+    </div>
+    <div id="divFloatToolsView" class="floatR" style="display: none; width: 140px; background: #e55600;">
+        <div class="cn">
+            <h3 class="titZx">官方在线客服</h3>
+            <ul id="jisuan_qq">
+                <volist name=":C('contact_qq')" id="v">
+                    <li>
+                        <span>客服{$i}</span>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$v}&amp;site=qq&amp;menu=yes">
+                            <img border="0" src="__PUBLIC__/Home/images/online.png" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+                        </a>
+                    </li>
+                </volist>
+                <volist name=":C('contact_qqun')" id="v">
+                    <li>
+                        <span>QQ群{$i}</span> {$v}
+                    </li>
+                </volist>
+                <li style="border: none;">
+                    <span>电话：{:C('contact_moble')}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="all_mask" class="all_mask" style="height: 0px; display: none;"></div>
+<div class="all_mask_loginbox" style="top: 313px; display: none;">
+    <div class="login_title pl20">登录</div>
+    <form id="form-login" class="mask_wrap login-fb">
+        <div class="login_text zin90">
+            <div class="mask_wrap_title">账号：</div>
+            <input id="login_username" name="username" type="text" placeholder="请输入手机号/会员名">
+        </div>
+        <div class="login_text zin80">
+            <div class="mask_wrap_title">密码：</div>
+            <input id="login_password" name="password" type="password" placeholder="请输入登录密码">
+        </div>
+        <eq name="C['login_verify']" value="1">
+            <div class="login_text zin70" id="ga-box-i">
+                <img id="codeImg reloadverifyindex" src="{:U('Verify/code')}" width="120" height="38" onclick="this.src=this.src+'?t='+Math.random()" style="margin-top: 1px; cursor: pointer;" title="换一张">
+                <input type="text" class="code" id="login_verify" name="code" placeholder="请输入验证码" style="width: 106px; float: left;">
+            </div>
+        </eq>
+        <div class="login_button">
+            <input type="button" value="登录" onclick="upLogin();">
+        </div>
+        <div class="login-footer wwxwwx" style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;">
+            <!--<a target="_blank" href="/"><img src="__PUBLIC__/Home/images/qq2.png" style="vertical-align: text-bottom; padding-right: 5px;">zzQQ登录</a>-->
+
+			<span style="color: #cccccc; float: right; margin-right: 25px;">
+			<a style="font-size: 12px;" href="{:U('Login/register')}">免费注册</a>｜<a href="{:U('Login/findpwd')}" style="font-size: 12px;">忘记密码</a></span>
+        </div>
+    </form>
+    <div class="mask_wrap_close" onclick="wrapClose()"></div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.cookies.2.2.0.js"></script>
+<script>
+    $('input').focus(function () {
+        var t = $(this);
+        if (t.attr('type') == 'text' || t.attr('type') == 'password')
+            t.css({'box-shadow': '0px 0px 3px #1583fb', 'border': '1px solid #1583fb', 'color': '#333'});
+        if (t.val() == t.attr('placeholder'))
+            t.val('');
+    });
+    $('input').blur(function () {
+        var t = $(this);
+        if (t.attr('type') == 'text' || t.attr('type') == 'password')
+            t.css({'box-shadow': 'none', 'border': '1px solid #e1e1e1', 'color': '#333'});
+        if (t.attr('type') != 'password' && !t.val())
+            t.val(t.attr('placeholder'));
+    });
+
+
+
+
+
+    function NumToStr(num) {
+        if (!num) return num;
+        num = Math.round(num * 100000000) / 100000000;
+        num = num.toFixed(8);
+        var min = 0.0001;
+        var times = 0;
+        var arr;
+        if (num <= min) {
+            times = 0;
+            while (num <= min) {
+                num *= 10;
+                times++;
+                if (times > 100) break;
+            }
+            num = num + '';
+            arr = num.split(".");
+            for (var i = 0; i < times; i++) {
+                arr['1'] = '0' + arr['1'];
+            }
+            return arr[0] + '.' + arr['1'] + '';
+        }
+        return num.toFixed(8) + ' ';
+    }
+
+
+    $(function () {
+        $("#floatTools").hover(function () {
+            $('#divFloatToolsView').animate({
+                width: 'show',
+                opacity: 'show'
+            }, 100, function () {
+                $('#divFloatToolsView').show();
+            });
+            $('#aFloatTools_Show').hide();
+            $('#aFloatTools_Hide').show();
+        }, function () {
+            $('#divFloatToolsView').animate({
+                width: 'hide',
+                opacity: 'hide'
+            }, 100, function () {
+                $('#divFloatToolsView').hide();
+            });
+            $('#aFloatTools_Show').show();
+            $('#aFloatTools_Hide').hide();
+        });
+        $("#divFloatToolsView").height(36 + $("#jisuan_qq li").length * 40);
+    });
+
+
+    function loginpop() {
+        $('.all_mask').css({'height': $(document).height()});
+        $('.all_mask').show();
+        $('.all_mask_loginbox').show();
+        $(".reloadverify").click();
+    }
+
+    var is_login = {$Think.session.userId
+    }
+    ;
+
+    if (window.location.hash == '#login') {
+        if (!is_login) {
+            loginpop();
+        }
+    }
+
+    if (is_login) {
+        $.getJSON("/Ajax/allfinance?t=" + Math.random(), function (data) {
+
+            $('#user_finance').html(data);
+        });
+    }
+
+
+    function wrapClose() {
+        $('.all_mask').hide();
+        $('.all_mask_loginbox').hide();
+    }
+
+    var cookieValue = $.cookies.get('cookie_username');
+    if (cookieValue != '' && cookieValue != null) {
+        $("#login_username").val(cookieValue);
+    }
+
+    function upLogin() {
+        var username = $("#login_username").val();
+        var password = $("#login_password").val();
+        var verify = $("#login_verify").val();
+        if (username == "" || username == null) {
+            layer.tips('请输入用户名', '#login_username', {tips: 3});
+            return false;
+        }
+        if (password == "" || password == null) {
+            layer.tips('请输入登录密码', '#login_password', {tips: 3});
+            return false;
+        }
+
+        $.post("{:U('Login/submit')}", {
+            username: username,
+            password: password,
+            verify: verify,
+        }, function (data) {
+            if (data.status == 1) {
+                $.cookies.set('cookie_username', username);
+                layer.msg(data.info, {icon: 1});
+                window.location = '/Finance';
+            } else {
+                //刷新验证码
+                $(".reloadverifyindex").click();
+                layer.msg(data.info, {icon: 2});
+                if (data.url) {
+                    window.location = data.url;
+                }
+            }
+        }, "json");
+    }
+</script></body></html>

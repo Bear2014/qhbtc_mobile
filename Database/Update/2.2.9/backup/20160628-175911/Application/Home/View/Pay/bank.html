@@ -1,0 +1,142 @@
+<include file="Public:header" />
+<div class="wrapper">
+	<div class="register" style="border-radius: 15px; margin-bottom: 20px;">
+		<h3 style="color: #ff7420; font-size: 30px; text-align: center; padding-top: 50px;">银行卡人工充值订单详情</h3>
+		<h3 style="color: #ff0000; font-size: 14px; text-align: center; padding-top: 15px;"><b>注意：</b>选择此方式充值，付款完成后必须联系官方<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2140705537&amp;site=qq&amp;menu=yes"  target="_blank">【充值QQ客服】</a>处理才能到账。</h3>
+		<table style="">
+			<tbody>
+				<tr>
+					<th align="right" style="font-size: 14px;">订单时间：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px;">
+							<span>{$mycz.addtime|addtime}</span>
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">订单编号：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px;">
+							<span id="invite-input"><font color="red">{$mycz.tradeno}</font></span>
+							<input type="button" value="复 制" data-clipboard-target="invite-input" class="inviteCopyButton" id="copy_button1" style="height: 22px; width: 60px; background: #0096e0; border-radius: 8px; color: #fff; margin-left: 10px; vertical-align: top;">
+						</div> <font color="blue">（请务必在“备注/附言/摘要”栏目里正确填写此编号）</font></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">充值金额：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px; color: #ff8000;">
+							￥
+							<span id="invite-inputa" style="width: 150px;">{$mycz.num}</span>
+							<input type="button" value="复 制" data-clipboard-target="invite-inputa" class="inviteCopyButton" id="copy_button2" style="height: 22px; width: 60px; background: #0096e0; border-radius: 8px; color: #fff; margin-left: 10px; vertical-align: top;">
+						</div> <font color="blue">（严格按照此金额转账，否则不能到账）</font></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">官方开户银行：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px;">
+							<span id="invite-inputaa">{$C['contact_bank'][0]}</span>
+							<input type="button" value="复 制" data-clipboard-target="invite-inputaa" class="inviteCopyButton" id="copy_button3" style="height: 22px; width: 60px; background: #0096e0; border-radius: 8px; color: #fff; margin-left: 10px; vertical-align: top;">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">官方开户姓名：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px;">
+							<span id="invite-inputaaa">{$C['contact_bank'][1]}</span>
+							<input type="button" value="复 制" data-clipboard-target="invite-inputaaa" class="inviteCopyButton" id="copy_button4" style="height: 22px; width: 60px; background: #0096e0; border-radius: 8px; color: #fff; margin-left: 10px; vertical-align: top;">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">官方银行账号：</th>
+					<td><div class="formbody" style="text-align: left; font-size: 18px;">
+							<span id="invite-inputaaaa">{$C['contact_bank'][2]}</span>
+							<input type="button" value="复 制" data-clipboard-target="invite-inputaaaa" class="inviteCopyButton" id="copy_button5" style="height: 22px; width: 60px; background: #0096e0; border-radius: 8px; color: #fff; margin-left: 10px; vertical-align: top;">
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">付款说明：</th>
+					<td><hr>
+						<div class="formbody" style="text-align: left; font-size: 18px; width: 500px;">
+							<p style="padding-left: 20px; color: #F00; line-height: 40px;">银行卡人工充值说明：</p>
+							<p style="padding-left: 20px; color: #0096e0; line-height: 24px; font-size: 14px;">一·用电脑网页银行或者手机银行APP或者支付宝转账汇款到公司对公账号。</p>
+							<p style="padding-left: 20px; color: #0096e0; line-height: 24px; font-size: 14px;">二·请充值完成后，立即联系淘币网官方充值<font color="#FF0000"><b>QQ客服：</b></font><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2140705537&amp;site=qq&amp;menu=yes"  target="_blank"><b><font color="#FF0000">2140705537</font></b></a></p>
+							<p style="padding-left: 20px; color: #0096e0; line-height: 24px; font-size: 14px;">三·发送转账流水明细、订单编号、会员编号给客服进行处理。</p>
+							<p style="padding-left: 20px; color: #F00; line-height: 40px; font-size: 14px;">提醒：正确填写金额和备注可以立即到账</p>
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right" style="font-size: 14px;">常用银行链接：</th>
+					<td><hr>
+						<div class="methodway" style="width: 500px;">
+							<ul style="margin-bottom: 5px;">
+								<volist name="UserBankType" id="v">
+								<li style="width: auto; border: #4F91F5 solid 1px; margin: 5px;">
+									<a href="{$v['url']}" title="{$v['title']}"  target="_blank">
+										<img src="__UPLOAD__/bank/{$v['img']}" name="{$v['name']}" title="{$v['title']}" width="152">
+									</a>
+								</li>
+								</volist>
+							</ul>
+						</div></td>
+				</tr>
+				<tr>
+					<th align="right"></th>
+					<td><hr> <span style="float: left; margin-top: 20px;">
+							>>付款成功
+							<a href="{:U('Finance/mycz')}" target="_blank">【立即查看】</a>
+						</span></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="right"></th>
+					<td><span style="float: left; margin-top: 10px;">
+							>>遇到问题
+							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$C['contact_qq'][0]}&amp;site=qq&amp;menu=yes"  target="_blank">【联系客服】</a>
+						</span></td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/Home/js/ZeroClipboard.min.js"></script>
+<script>
+	var client=new ZeroClipboard(document.getElementById("copy-button"));
+	client.on("ready",function(readyEvent){
+		client.on("aftercopy",function(event){
+			event.target.style.display="none";
+		});
+	});
+	ZeroClipboard.config({swfPath:'__PUBLIC__/Home/js/ZeroClipboard.swf'});
+	var clip=new ZeroClipboard(document.getElementById("copy"));
+	$(document).ready(function(){
+		var clip1=new ZeroClipboard(document.getElementById("copy_button1"));
+		var clip2=new ZeroClipboard(document.getElementById("copy_button2"));
+		var clip3=new ZeroClipboard(document.getElementById("copy_button3"));
+		var clip4=new ZeroClipboard(document.getElementById("copy_button4"));
+		var clip5=new ZeroClipboard(document.getElementById("copy_button5"));
+		clip1.on("copy",function(e){
+			layer.msg('复制成功！',{icon:1});
+		});
+		clip2.on("copy",function(e){
+			layer.msg('复制成功！',{icon:1});
+		});
+		clip3.on("copy",function(e){
+			layer.msg('复制成功！',{icon:1});
+		});
+		clip4.on("copy",function(e){
+			layer.msg('复制成功！',{icon:1});
+		});
+		clip5.on("copy",function(e){
+			layer.msg('复制成功！',{icon:1});
+		});
+		$(".wlb_tsina").click(function(){
+			window.open("http://v.t.sina.com.cn/share/share.php?url="+_share_url+"&title="+_share_content);
+		});
+		$(".wlb_douban").click(function(){
+			window.open("http://www.douban.com/recommend/?url="+_share_url+"&title="+_share_content);
+		});
+		$(".wlb_qzone").click(function(){
+			window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+_share_url+"&title="+_share_title+"&pics="+_share_pic+"&desc="+_share_content);
+		});
+	});
+</script>
+<script>
+	//顶部菜单高亮
+	$('#menu_top_finance').addClass('current');
+</script>
+<include file="Public:footer" />

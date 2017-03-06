@@ -1,0 +1,228 @@
+<include file="Public:header"/>
+<div id="main-content">
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+        <div class="alert-content">警告内容</div>
+    </div>
+    <div id="main" class="main">
+        <div class="main-title-h">
+
+            <span class="h1-title"><a href="{:U('Finance/myczType')}">人民币充值方式列表</a>  >></span>
+            <span class="h1-title"><empty name="data">添加人民币充值方式
+                <else/>
+                编辑人民币充值方式
+            </empty></span>
+
+
+        </div>
+
+        <div class="tab-wrap">
+
+            <div class="tab-content">
+                <form id="form" action="{:U('Finance/myczTypeEdit')}" method="post" class="form-horizontal"
+                      >
+                    <div id="tab" class="tab-pane in tab">
+                        <div class="form-item cf">
+                            <table>
+
+                                <tr class="controls">
+                                    <td class="item-label">接口名称 :</td>
+                                    <td><input type="text" class="form-control" name="title" value="{$data.title}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+                                <tr class="controls">
+                                    <td class="item-label">官方账号 :</td>
+                                    <td><input type="text" class="form-control" name="username" value="{$data.username}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+                                <tr class="controls">
+                                    <td class="item-label">接口密匙 :</td>
+                                    <td><input type="password" class="form-control" name="password" value="{$data.password}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+                                <tr class="controls">
+                                    <td class="item-label">开户名称 :</td>
+                                    <td><input type="text" class="form-control" name="truename" value="{$data.truename}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+                                <tr class="controls">
+                                    <td class="item-label">开户地址 :</td>
+                                    <td><input type="text" class="form-control" name="kaihu" value="{$data.kaihu}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+
+                                <tr class="controls">
+                                    <td class="item-label">最小充值 :</td>
+                                    <td><input type="text" class="form-control" name="min" value="{$data.min}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+                                <tr class="controls">
+                                    <td class="item-label">最大充值 :</td>
+                                    <td><input type="text" class="form-control" name="max" value="{$data.max}"
+                                               style="width: 400px;"></td>
+                                    <td class="item-note"></td>
+                                </tr>
+
+
+
+                                <tr class="controls">
+                                    <td class="item-label">二维码 :</td>
+                                    <td>
+                                        <input type="file" id="upload_picture_img" class="form-control">
+                                        <input type="hidden" name="img" id="cover_id_img" value="{$data['img']}"/>
+                                    </td>
+                                    <td class="item-note"></td>
+                                </tr>
+
+
+
+                                <notempty name="data['img']">
+                                <tr class="controls"  id="upload-pre-itemaaa">
+                                    <td class="item-label"></td>
+                                    <td>
+
+                                        <div class="upload-img-box">
+
+                                                <div class="upload-pre-item"><img id="upload-pre-item"  src="__UPLOAD__/public/{$data.img}" width="150"  style="margin-bottom: 20px;"/></div>
+                                            <input type="hidden" name="img" id="cover_id_imga" value="{$data.img}"/>
+                                         </div>
+
+                                    </td>
+                                    <td class="item-note"></td>
+                                </tr>
+
+                                    <else/>
+
+                                    <tr class="controls"  id="upload-pre-itemaaa"style="display: none;">
+                                        <td class="item-label"></td>
+                                        <td>
+
+                                            <div class="upload-img-box">
+
+                                                <div class="upload-pre-item"><img id="upload-pre-item"  src="" width="150"  style="margin-bottom: 20px;"/></div>
+                                                <input type="hidden" name="img" id="cover_id_imga" value=""/>
+                                            </div>
+
+                                        </td>
+                                        <td class="item-note"></td>
+                                    </tr>
+
+
+                                </notempty>
+
+
+                                <tr class="controls">
+                                    <td class="item-label">状态 :</td>
+                                    <td><select name="status" class="input-small form-control" style="width: 150px;">
+                                        <option value="1"
+                                        <eq name="data.status" value="1">selected</eq>
+                                        >可用
+                                        </option>
+                                        <option value="0"
+                                        <eq name="data.status" value="0">selected</eq>
+                                        >禁用
+                                        </option>
+                                    </select></td>
+                                    <td class="item-note"></td>
+                                </tr>
+
+                                <tr class="controls">
+                                    <td class="item-label"></td>
+                                    <td>
+                                        <div class="form-item cf">
+                                            <button class="ajax-post btn submit-btn" id="submit" type="submit"
+                                                    target-form="form-horizontal" style="margin-right: 14px;">确
+                                                定
+                                            </button>
+                                            <a class="btn btn-return" href="{$Think.server.HTTP_REFERER}">返 回</a>
+                                            <notempty name="data.id"><input type="hidden" name="id" value="{$data.id}"/>
+                                            </notempty>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    //提交表单
+                    $('#submit').click(function () {
+                        $('#form').submit();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript">
+    //上传图片
+    /* 初始化上传插件 */
+    $("#upload_picture_img").uploadify({
+        "height"          : 30,
+        "swf"             : "__PUBLIC__/uploadify/uploadify.swf",
+        "fileObjName"     : "img",
+        "buttonText"      : "上传图片",
+        "uploader"        : "{:U('Finance/myczTypeEdit','type=images')}",
+        "width"           : 150,
+        'removeTimeout'	  : 1,
+        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+        'onFallback' : function() {
+            alert('未检测到兼容版本的Flash.');
+        },
+        "onUploadSuccess" : uploadPictureimg
+    });
+    function uploadPictureimg(file, data){
+        var data = $.parseJSON(data);
+        //var src = '';
+
+
+
+        if(data.error==0){
+
+
+
+
+
+            $("#upload-pre-item").attr("src","__UPLOAD__/public/"+data.url);
+            $("#cover_id_imga").val(data.url);
+
+
+            $("#upload-pre-itemaaa").show();
+
+
+/*
+            $("#upload_single_image_img_{$field.name}").html(
+                    '<td class="item-label"></td>' +
+                    '<td><div class="each"><a href="' + data.url + '" title="点击查看大图"><img src="' + data.url + '" width="{$field.opt.width}" height="{$field.opt.height}" style="margin: 10px 0px;"></a></div></td>' +
+                    '<td class="item-note"></td>'
+            );*/
+
+
+            //uploader_img.reset();
+
+
+
+        } else {
+            layer.msg(data.message,{icon : 1 });
+
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        //主导航高亮
+        $('.article-box').addClass('current');
+        //边导航高亮
+        $('.article-index').addClass('current');
+    });
+</script>
+<include file="Public:footer"/>
