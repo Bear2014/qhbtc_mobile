@@ -33,7 +33,9 @@
             <div id="coin_active" class="weituo_bizhong">
                 <div class="bizhong_select">
                     <div class="bz_btn">
-                        <img src="__UPLOAD__/coin/{$coin_list[$xnb]['img']}" alt="" style="width: 22px; float: left; margin-top: 7px; margin-right: 5px;"/><span id="coin-default"> <select name="type" id="myzc_type">
+                        <img src="__UPLOAD__/coin/{$coin_list[$xnb]['img']}" alt="" style="width: 22px; float: left; margin-top: 7px; margin-right: 5px;"/>
+                        <span id="coin-default"> 
+                        <select name="type" id="myzc_type">
                         <volist name="coin_list" id="vo">
                             <eq name="xnb" value="$key">
                                 <option value="{$vo['name']}" selected="selected">{$vo.title} ({$vo['name']|strtoupper})</option>
@@ -42,7 +44,7 @@
                             </eq>
                         </volist>
                     </select>
-      </span>
+                    </span>
                     </div>
                 </div>
                 <div class="bizhong_type" style="width: 220px;">

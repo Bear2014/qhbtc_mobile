@@ -95,7 +95,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   -webkit-appearance: none;
   box-shadow: 0px 0px 7px 0px rgba(153, 153, 153, 0.41);
 }
-.send input[type="submit"] {
+.send input[type="submit"]{
   background: #C50000;
   font-size: 1em;
   font-weight: 400;
@@ -118,6 +118,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
+
 .box2 input[type="submit"]{
   background: rgba(0, 0, 0, 0.78);
   font-size: 1em;
