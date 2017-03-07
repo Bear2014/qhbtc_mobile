@@ -16,13 +16,19 @@
     // 定义数据库类型
     define('DB_TYPE', 'mysql');
     // 定义数据库地址
-    define('DB_HOST', 'rm-wz9b2blhu6vc6tqwd.mysql.rds.aliyuncs.com');
+    //define('DB_HOST', 'rm-wz9b2blhu6vc6tqwd.mysql.rds.aliyuncs.com');
+     define('DB_HOST', 'localhost');
+
     // 定义数据库名
     define('DB_NAME', 'qhbtc');
     // 定义数据库账号
-    define('DB_USER', 'qhbtc');
+    //define('DB_USER', 'qhbtc');
+    define('DB_USER', 'root');
+
     // 定义数据库密码
-    define('DB_PWD', 'Qhbtc123456');
+    //define('DB_PWD', 'Qhbtc123456');
+    define('DB_PWD', 'root');
+
     // 定义数据库端口
     define('DB_PORT', '3306');
     // 开启演示模式

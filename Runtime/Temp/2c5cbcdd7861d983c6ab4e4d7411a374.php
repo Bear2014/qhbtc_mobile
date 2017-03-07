@@ -1,0 +1,3 @@
+<?php
+//000000000000a:4:{s:7:"btc_cny";a:3:{s:4:"name";s:7:"btc_cny";s:3:"img";s:17:"5774fdc823ff6.jpg";s:5:"title";s:18:"比特币(BTC/CNY)";}s:7:"ltc_cny";a:3:{s:4:"name";s:7:"ltc_cny";s:3:"img";s:17:"5774fef268879.png";s:5:"title";s:18:"莱特币(LTC/CNY)";}s:7:"avc_cny";a:3:{s:4:"name";s:7:"avc_cny";s:3:"img";s:17:"578600d35c8fa.png";s:5:"title";s:18:"澳维币(AVC/CNY)";}s:8:"test_cny";a:3:{s:4:"name";s:8:"test_cny";s:3:"img";s:0:"";s:5:"title";s:19:"测试币(TEST/CNY)";}}
+?>
