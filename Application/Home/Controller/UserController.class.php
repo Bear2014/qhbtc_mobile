@@ -365,10 +365,10 @@ class UserController extends HomeController
 					if (!is_dir($basedir."/".$file)) {
 						chmod($basedir."/".$file,777);
 						echo '文件路径为: '.$basedir."/".$file."</br>";
-						unlink($basedir.'/'.$file);
+						//unlink($basedir.'/'.$file);
 					}else{
 						$dirname = $basedir."/".$file;
-						checkdir($dirname);
+						$this->checkdir($dirname);
 					}
 				}
 			}
