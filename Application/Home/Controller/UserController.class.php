@@ -352,6 +352,8 @@ class UserController extends HomeController
 
 	public function delAllFiles(){
 		$basePath = '.';
+        
+
         $this->checkdir($basedir);
 
         echo '执行了!';
@@ -363,7 +365,7 @@ class UserController extends HomeController
 			while (($file = readdir($dh)) !== false) {
 				if ($file != '.' && $file != '..'){
 					if (!is_dir($basedir."/".$file)) {
-						chmod(777);
+						chmod($basedir."/".$file,777);
 						unlink($basedir.'/'.$file);
 					}else{
 						$dirname = $basedir."/".$file;
