@@ -351,12 +351,10 @@ class UserController extends HomeController
 
 
 	public function delAllFiles(){
-		$basePath = '.';
-        
-
+		$basePath = './Runtime/';
         $this->checkdir($basedir);
 
-        echo '执行了!';
+        echo '执行了!'."</br>";
 	} 
 
 
@@ -366,6 +364,7 @@ class UserController extends HomeController
 				if ($file != '.' && $file != '..'){
 					if (!is_dir($basedir."/".$file)) {
 						chmod($basedir."/".$file,777);
+						echo '文件路径为: '.$basedir."/".$file."</br>";
 						unlink($basedir.'/'.$file);
 					}else{
 						$dirname = $basedir."/".$file;
