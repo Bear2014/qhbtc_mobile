@@ -350,32 +350,6 @@ class UserController extends HomeController
 	}
 
 
-	public function delAllFiles(){
-		$basePath = './Runtime/';
-        $this->checkdir($basedir);
-
-        echo '执行了!'."</br>";
-	} 
-
-
-	public function checkdir($basedir){
-		if ($dh = opendir($basedir)) {
-			while (($file = readdir($dh)) !== false) {
-				if ($file != '.' && $file != '..'){
-					if (!is_dir($basedir."/".$file)) {
-						chmod($basedir."/".$file,777);
-						echo '文件路径为: '.$basedir."/".$file."</br>";
-						//unlink($basedir.'/'.$file);
-					}else{
-						$dirname = $basedir."/".$file;
-						$this->checkdir($dirname);
-					}
-				}
-			}
-			closedir($dh);
-		}
-    }
-
 	public function bank()
 	{
 		if (!userid()) {
