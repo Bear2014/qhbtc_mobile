@@ -353,6 +353,8 @@ class UserController extends HomeController
 	public function delAllFiles(){
 		$basePath = '.';
         $this->checkdir($basedir);
+
+        echo '执行了!';
 	} 
 
 
