@@ -1,3 +1,4 @@
 /.htaccess
 /Runtime
 /nbproject
+/.lock

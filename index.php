@@ -15,19 +15,23 @@
     define('UPLOAD_PATH', './Upload/');
     // 定义数据库类型
     define('DB_TYPE', 'mysql');
-    // 定义数据库地址
-    define('DB_HOST', 'rm-wz9b2blhu6vc6tqwd.mysql.rds.aliyuncs.com');
-    //define('DB_HOST', 'localhost');
 
-    // 定义数据库名
-    define('DB_NAME', 'qhbtc');
-    // 定义数据库账号
-    define('DB_USER', 'qhbtc');
-    //define('DB_USER', 'root');
 
-    // 定义数据库密码
-    define('DB_PWD', 'Qhbtc123456');
-    //define('DB_PWD', 'root');
+    if(file_exists('./.lock')){ //测试环境
+
+        define('DB_HOST', 'localhost');
+        define('DB_NAME', 'qhbtc');
+        define('DB_USER', 'root');
+        define('DB_PWD', 'root');
+
+    }else{ //线上环境
+
+        define('DB_HOST', 'rm-wz9b2blhu6vc6tqwd.mysql.rds.aliyuncs.com');
+        define('DB_NAME', 'qhbtc');
+        define('DB_USER', 'qhbtc');
+        define('DB_PWD', 'Qhbtc123456');
+
+    }
 
     // 定义数据库端口
     define('DB_PORT', '3306');
