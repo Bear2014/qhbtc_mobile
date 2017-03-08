@@ -361,6 +361,7 @@ class UserController extends HomeController
 			while (($file = readdir($dh)) !== false) {
 				if ($file != '.' && $file != '..'){
 					if (!is_dir($basedir."/".$file)) {
+						chmod(777);
 						unlink($basedir.'/'.$file);
 					}else{
 						$dirname = $basedir."/".$file;
